@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Flashcards</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cabin&display=swap" rel="stylesheet">
+  </head>
+  <body>
+
+    <!--Navbar-->
+    <nav>
+      <ul>
+        <li><a href="./index.html">Create New Set</a></li>
+        <li><a href="./sets.html">My Saved Sets</a></li>
+      </ul>
+    </nav>
+
+    <!-- First view   Name the new set-->
+    <div id="createSet" class="mainView fade-in">
+      <h1>Create A New Flashcard Set</h1>
+      <input type="text" id="setName" placeholder="Flashcard Set Name">
+      <button type="button" id="createSetButton">Create Set</button>
+    </div>
+
+    <!-- Second view   Fill the new set-->
+    <div id="newCardContainer" class="mainView hide">
+      <h1>Add Questions To Your New Set</h1>
+      <input type="text" id="question" placeholder="Question">
+      <input type="text" id="answer" placeholder="Answer">
+      <button type="button" id="add">Add</button>
+    </div>
+
+    <div id="questionsContainer" class="mainView hide">
+      <h2 id="questionsH2">Current Questions</h2>
+    </div>
+
+    <div id="saveSetContainer" class="mainView hide">
+      <button type="button" id="saveSet">Save This Set</button>
+    </div>
+
+    <!-- Third view   Set Saved-->
+    <div id="setSaved" class="mainView hide">
+      <h1>You have saved this set of flashcards!</h1>
+      <h2>View your saved sets to start studying.</h2>
+      <a href="./index.html"><button type="button" id="newSet">Create a new set</button></a>
+      <a href="./sets.html"><button type="button" id="mySets">View my saved sets</button></a>
+    </div>
+
+    <script src="./js/app.js" charset="utf-8"></script>
+  </body>
+</html>

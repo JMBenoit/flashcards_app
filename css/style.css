@@ -1,0 +1,130 @@
+body {
+  height: 100%;
+  margin: 0;
+  font-family: 'Cabin', sans-serif;
+}
+
+/***Animations***/
+
+@keyframes fade-in {
+  from  {opacity: 0;}
+  to  {opacity: 1;}
+}
+
+@keyframes fade-out {
+  from  {opacity: 1;}
+  to  {opacity: 0;}
+}
+
+.fade-in {
+  animation-name: fade-in;
+  animation-fill-mode: both;
+  animation-duration: 1s;
+}
+
+.fade-out {
+  animation-name: fade-out;
+  animation-fill-mode: both;
+  animation-duration: 1s;
+}
+
+.slide-out {
+  transform: translateX(0);
+}
+
+.hide {
+  display: none;
+}
+
+/***Navbar***/
+
+nav {
+  width: 100%;
+  font-size: 20px;
+  background: #2980b9;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+li a {
+  color: white;
+  text-decoration: none;
+  display: block;
+  padding: 30px;
+}
+
+li a:hover {
+  background-color: #3498db;
+}
+
+/***Index***/
+
+.mainView {
+  text-align: center;
+  color: #2980b9;
+  width: 300px;
+  margin: 100px auto;
+}
+
+.mainView h1 {
+  font-size: 40px;
+}
+
+.mainView h2 {
+  font-size: 30px;
+}
+
+.mainView h3 {
+  margin: auto 0;
+  display: inline-block;
+}
+
+.mainView input {
+  width: 90%;
+  font-size: 20px;
+  padding: 8px;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.mainView button {
+  margin: 0;
+  width: auto;
+  padding: 8px;
+  border-radius: 8px;
+  border-style: none;
+  background-color: #2980b9;
+  color: white;
+}
+
+.mainView button:hover {
+  background-color: #3498db;
+}
+
+.mainView .setQuestionContainer {
+  margin: 15px;
+  text-align: left;
+}
+
+.mainView p {
+  margin: 0;
+}
+
+#saveSet {
+  font-size: 20px;
+}
+
+#cardSet {
+  margin: 50px auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+#cardSet button {
+  margin-left: 10px;
+}
