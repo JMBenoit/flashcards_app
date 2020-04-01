@@ -16,6 +16,11 @@ body {
   to  {opacity: 0;}
 }
 
+@keyframes changeBackground {
+  from  {background: white;}
+  to  {background: #3498db;}
+}
+
 .fade-in {
   animation-name: fade-in;
   animation-fill-mode: both;
@@ -28,8 +33,10 @@ body {
   animation-duration: 1s;
 }
 
-.slide-out {
-  transform: translateX(0);
+.changeBackground {
+  animation-name: changeBackground;
+  animation-fill-mode: both;
+  animation-duration: 1s;
 }
 
 .hide {
@@ -127,4 +134,39 @@ li a:hover {
 
 #cardSet button {
   margin-left: 10px;
+}
+
+.editCard {
+  margin: 50px auto;
+}
+
+#studyCardSetContainer {
+  margin: 100px auto;
+  width: 75%;
+  background: white;
+  border: 10px solid #2980b9;
+  border-radius: 20px;
+}
+
+#studyCardSetContainer h1 {
+  margin: 100px;
+}
+
+#showAnswer {
+  display: block;
+}
+
+#studyCardSetContainer button {
+  margin: 20px auto;
+}
+
+#correctOrWrong {
+  margin: 100px;
+}
+
+#stopStudying {
+  margin: 0 !important;
+  position: absolute;
+  top: 20px;
+  right: 20px;
 }

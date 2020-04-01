@@ -6,20 +6,53 @@
     <link rel="stylesheet" href="./css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Cabin&display=swap" rel="stylesheet">
   </head>
-  <body>
+  <body id="setsBody">
 
     <!--Navbar-->
-    <nav>
+    <nav id="navbar">
       <ul>
         <li><a href="./index.html">Create New Set</a></li>
         <li><a href="./sets.html">My Saved Sets</a></li>
       </ul>
     </nav>
 
-    <!--Saveds Sets-->
+
+    <!--1st View  Saved Sets-->
     <div id="mySavedSetsContainer" class="mainView fade-in">
       <h1>My Saved Flashcard Sets</h1>
     </div>
+
+
+    <!--Edit Sets View-->
+    <div id="editQuestionsContainer" class="mainView hide">
+      <h2 id="questionsH2">Current Questions</h2>
+    </div>
+
+    <div id="saveButtonContainer" class="mainView hide">
+      <button type="button" id="saveChanges">Save Changes</button>
+    </div>
+
+    <!--Edit Sets Saved View-->
+    <div id="editedSetSaved" class="mainView hide">
+      <h1>The edited flashcard set is saved!</h1>
+      <a href="./sets.html"><button type="button" id="mySets">View my saved sets</button></a>
+    </div>
+
+
+    <!--Study View-->
+    <div id="studyCardSetContainer" class="mainView hide">
+      <h1>Question</h1>
+      <h3>answer</h3>
+      <button type="button" id="showAnswer">Show Answer</button>
+      <div id="correctOrWrong">
+        <p>I was</p>
+        <button type="button" id="correct">Correct</button>
+        <button type="button" id="Wrong">Wrong</button>
+      </div>
+      <button type="button" id="stopStudying">Stop Studying</button>
+    </div>
+
+
 
     <script src="./js/sets.js" charset="utf-8"></script>
   </body>

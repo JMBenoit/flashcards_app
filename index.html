@@ -6,15 +6,16 @@
     <link rel="stylesheet" href="./css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Cabin&display=swap" rel="stylesheet">
   </head>
-  <body>
+  <body id="homeBody">
 
     <!--Navbar-->
-    <nav>
+    <nav id="navbar">
       <ul>
         <li><a href="./index.html">Create New Set</a></li>
         <li><a href="./sets.html">My Saved Sets</a></li>
       </ul>
     </nav>
+
 
     <!-- First view   Name the new set-->
     <div id="createSet" class="mainView fade-in">
@@ -22,6 +23,7 @@
       <input type="text" id="setName" placeholder="Flashcard Set Name">
       <button type="button" id="createSetButton">Create Set</button>
     </div>
+
 
     <!-- Second view   Fill the new set-->
     <div id="newCardContainer" class="mainView hide">
@@ -38,6 +40,7 @@
     <div id="saveSetContainer" class="mainView hide">
       <button type="button" id="saveSet">Save This Set</button>
     </div>
+
 
     <!-- Third view   Set Saved-->
     <div id="setSaved" class="mainView hide">
