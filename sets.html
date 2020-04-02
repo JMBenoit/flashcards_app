@@ -40,18 +40,28 @@
 
 
     <!--Study View-->
-    <div id="studyCardSetContainer" class="mainView hide">
-      <h1>Question</h1>
-      <h3>answer</h3>
-      <button type="button" id="showAnswer">Show Answer</button>
+    <div id="studyCardSetContainer" class="mainView cardView hide">
+      <h1 id="cardQuestion">Question</h1>
+      <div id="cardAnswerContainer" class="hide">
+        <h3 id="cardAnswer">answer</h3>
+      </div>
+      <div id="showAnswerContainer">
+        <button type="button" id="showAnswer">Show Answer</button>
+      </div>
       <div id="correctOrWrong">
         <p>I was</p>
         <button type="button" id="correct">Correct</button>
-        <button type="button" id="Wrong">Wrong</button>
+        <button type="button" id="wrong">Wrong</button>
       </div>
-      <button type="button" id="stopStudying">Stop Studying</button>
+      <a href="./sets.html"><button type="button" id="stopStudying">Stop Studying</button></a>
     </div>
 
+
+    <!--Study Completed View-->
+    <div id="studyDoneContainer" class="mainView cardView hide">
+      <h1>Flashcard set complete!</h1>
+      <a href="./sets.html"><button type="button" id="mySets">Back to My Sets</button></a>
+    </div>
 
 
     <script src="./js/sets.js" charset="utf-8"></script>

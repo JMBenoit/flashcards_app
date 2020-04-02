@@ -140,7 +140,7 @@ li a:hover {
   margin: 50px auto;
 }
 
-#studyCardSetContainer {
+.cardView {
   margin: 100px auto;
   width: 75%;
   background: white;
@@ -148,20 +148,24 @@ li a:hover {
   border-radius: 20px;
 }
 
-#studyCardSetContainer h1 {
+.cardView h1 {
   margin: 100px;
+}
+
+.cardView button {
+  margin: 50px auto;
 }
 
 #showAnswer {
   display: block;
 }
 
-#studyCardSetContainer button {
-  margin: 20px auto;
+#correctOrWrong {
+  margin: 50px auto;
 }
 
-#correctOrWrong {
-  margin: 100px;
+#correctOrWrong button {
+  margin-top: 10px;
 }
 
 #stopStudying {

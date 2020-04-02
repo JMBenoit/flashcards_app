@@ -10,21 +10,28 @@ if (tempSavedSets != null) {
   allSavedSets = tempSavedSets;
 }
 
-//global variables for pointing to card sets
+//global variables for pointing to current card sets
 let currSetIndex = 0;
 let currSet = [];
 
+//variables for tracking correct cards
+let correctCards = [];
+let currStudyIndex;
 
-function pointToCardSet()
+
+function showNewCard()
 {
-  //search to see if h3 of button matches the saved set name, and if so save those to created global variables
-  let flashcardSets = document.getElementsByClassName('cardSet');
-  for (var i = 0; i < flashcardSets.length; i++) {
-    if (flashcardSets[i].children[0].innerText == this.parentNode.parentNode.children[0].innerText) {
-      currSetIndex = i;
-      currSet = allSavedSets[i];
-    }
+  //random number generator to randomize card order
+  currStudyIndex = Math.round(Math.random() * (currSet.cards.length - 1));
+  //check to see if card already marked as correct. if so, pull a new card and then pull question and answer from object to display
+  if (correctCards[currStudyIndex] == true) {
+    showNewCard();
   }
+  else {
+    $('cardQuestion').innerText = currSet.cards[currStudyIndex].question;
+    $('cardAnswer').innerText = currSet.cards[currStudyIndex].answer;
+  }
+
 }
 
 function studyCardSet()
@@ -45,17 +52,15 @@ function studyCardSet()
      $('mySavedSetsContainer').classList.toggle('hide');
      $('setsBody').classList.toggle('changeBackground');
      $('studyCardSetContainer').classList.toggle('hide');
+     $('cardAnswer').classList.toggle('hide');
+     $('correctOrWrong').classList.toggle('hide');
      $('studyCardSetContainer').classList.toggle('fade-in');
    }, 800);
-
-  // TODO:
-  //set show answer
-  //set correct/wrong buttons
-  //set stop studying button
-  //creat rng to randomize question order
-  //set correct/wrong buttons
-      //if correct, hide from showing again and show next question. if wrong, keep in loop
-  //when all cards correct, studying done. show replay or back to saved sets
+   //fills tracking array to size of flashcard set
+   for (var i = 0; i < currSet.cards.length; i++) {
+     correctCards[i] = false;
+   }
+   showNewCard();
 }
 
 function editCardSet()
@@ -125,3 +130,56 @@ $('saveChanges').addEventListener('click', function(){
       $('editedSetSaved').classList.toggle('fade-in');
     }, 800);
 });
+
+$('showAnswer').addEventListener('click', function(){
+  //fades out show answer button and fades in answer and correct/wrong buttons
+  $('showAnswerContainer').classList.toggle('fade-out');
+   setTimeout(function(){
+     $('showAnswerContainer').classList.toggle('hide');
+     $('cardAnswerContainer').classList.toggle('hide');
+     $('cardAnswerContainer').classList.toggle('fade-in');
+     $('correctOrWrong').classList.toggle('hide');
+     $('correctOrWrong').classList.toggle('fade-in');
+   }, 800);
+});
+
+$('correct').addEventListener('click', function(){
+  //if correct, marks that index in the tracking array as true so question is not repeated
+  correctCards[currStudyIndex] = true;
+  //checks to see if there are any falses still in the array
+  let studyComplete = true;
+  for (var i = 0; i < correctCards.length; i++) {
+    if (correctCards[i] == false) {
+      studyComplete = false;
+    }
+  }
+  //if there are no more falses, studying is complete and changes view
+  if (studyComplete) {
+    $('studyCardSetContainer').classList.toggle('fade-out');
+     setTimeout(function(){
+       $('studyCardSetContainer').classList.toggle('hide');
+       $('studyDoneContainer').classList.toggle('hide');
+       $('studyDoneContainer').classList.toggle('fade-in');
+     }, 800);
+  }
+  //if there are more falses, show another card
+  else {
+    $('showAnswerContainer').classList.toggle('fade-out');
+    $('showAnswerContainer').classList.toggle('fade-in');
+    $('cardQuestion').classList.toggle('fade-in');
+    $('cardAnswerContainer').classList.toggle('hide');
+    $('showAnswerContainer').classList.toggle('hide');
+    $('correctOrWrong').classList.toggle('hide');
+    showNewCard();
+  }
+})
+
+$('wrong').addEventListener('click', function(){
+  $('showAnswerContainer').classList.toggle('fade-out');
+  $('showAnswerContainer').classList.toggle('fade-in');
+  $('cardQuestion').classList.toggle('fade-in');
+  $('cardAnswerContainer').classList.toggle('hide');
+  $('showAnswerContainer').classList.toggle('hide');
+  $('correctOrWrong').classList.toggle('hide');
+  showNewCard();
+})
