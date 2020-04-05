@@ -79,21 +79,22 @@ li a:hover {
 }
 
 .mainView h1 {
-  font-size: 40px;
+  font-size: 60px;
 }
 
 .mainView h2 {
-  font-size: 30px;
+  font-size: 40px;
 }
 
 .mainView h3 {
+  font-size: 30px;
   margin: auto 0;
   display: inline-block;
 }
 
 .mainView input {
   max-width: 50%;
-  font-size: 20px;
+  font-size: 40px;
   padding: 8px;
   text-align: center;
   margin-bottom: 15px;
@@ -101,12 +102,14 @@ li a:hover {
 
 .mainView button {
   margin: 0;
+  margin-top: 20px;
   width: auto;
-  padding: 8px;
+  padding: 12px;
   border-radius: 8px;
   border-style: none;
   background-color: #2980b9;
   color: white;
+  font-size: 30px;
 }
 
 .mainView button:hover {
@@ -133,7 +136,7 @@ li a:hover {
 }
 
 #cardSet button {
-  margin-left: 10px;
+  margin: 10px;
 }
 
 .editCard {
@@ -173,6 +176,10 @@ li a:hover {
   position: absolute;
   top: 20px;
   right: 20px;
+}
+
+#cardAnswerContainer {
+  margin: 15px;
 }
 
 
