@@ -166,7 +166,6 @@ $('correct').addEventListener('click', function(){
   else {
     $('showAnswerContainer').classList.toggle('fade-out');
     $('showAnswerContainer').classList.toggle('fade-in');
-    $('cardQuestion').classList.toggle('fade-in');
     $('cardAnswerContainer').classList.toggle('hide');
     $('showAnswerContainer').classList.toggle('hide');
     $('correctOrWrong').classList.toggle('hide');
@@ -177,7 +176,6 @@ $('correct').addEventListener('click', function(){
 $('wrong').addEventListener('click', function(){
   $('showAnswerContainer').classList.toggle('fade-out');
   $('showAnswerContainer').classList.toggle('fade-in');
-  $('cardQuestion').classList.toggle('fade-in');
   $('cardAnswerContainer').classList.toggle('hide');
   $('showAnswerContainer').classList.toggle('hide');
   $('correctOrWrong').classList.toggle('hide');
