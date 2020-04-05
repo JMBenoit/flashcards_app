@@ -74,7 +74,7 @@ li a:hover {
 .mainView {
   text-align: center;
   color: #2980b9;
-  width: 50%;
+  width: 80%;
   margin: 100px auto;
 }
 
@@ -92,7 +92,7 @@ li a:hover {
 }
 
 .mainView input {
-  width: 90%;
+  max-width: 50%;
   font-size: 20px;
   padding: 8px;
   text-align: center;

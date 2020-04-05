@@ -77,7 +77,7 @@ function editCardSet()
   $('questionsH2').innerHTML = currSet.name + "<br>Current Questions";
   //adds html element for each flashcards info for editing
   for (var i = 0; i < currSet.cards.length; i++) {
-    let savedQuestionHTML = '<div id="editQuestion" class="mainView editCard"><input type="text" id="question" placeholder="Question" value="' + currSet.cards[i].question + '"><input type="text" id="answer" placeholder="Answer" value="' + currSet.cards[i].answer + '"></div>';
+    let savedQuestionHTML = '<div id="editQuestion" class="mainView editCard"><input type="text" id="question" placeholder="Question" value="' + currSet.cards[i].question + '"><br><input type="text" id="answer" placeholder="Answer" value="' + currSet.cards[i].answer + '"></div>';
     $('editQuestionsContainer').insertAdjacentHTML('beforeend', savedQuestionHTML);
   }
   //fade out the 1st view, and then fade in the editing view after animation
@@ -104,6 +104,7 @@ for (var i = 0; i < allSavedSets.length; i++){
   studyBtn.addEventListener('click', studyCardSet);
   editBtn.addEventListener('click', editCardSet);
 }
+
 
 $('saveChanges').addEventListener('click', function(){
   //create a new array to save edited questions
